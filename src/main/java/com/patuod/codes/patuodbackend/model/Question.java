@@ -12,12 +12,13 @@ public class Question {
 	@Id
 	@GeneratedValue
 	private Long questionID;
+	private String question;
+	private String answer;
 	
 	@ManyToOne
 	@JoinColumn(name = "categoryID")
-	private Long categoryID;
-	private String question;
-	private String answer;
+	private Category categoryID;
+	
 
 	public Long getId() {
 		return questionID;
@@ -25,10 +26,10 @@ public class Question {
 	public void setId(Long id) {
 		this.questionID = id;
 	}
-	public Long getCategoryID() {
+	public Category getCategoryID() {
 		return categoryID;
 	}
-	public void setCategoryID(Long categoryID) {
+	public void setCategoryID(Category categoryID) {
 		this.categoryID = categoryID;
 	}
 	public String getQuestion() {
